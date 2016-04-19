@@ -1,0 +1,28 @@
+#page #header {
+  background-color: #36312d;
+  font-family: 'Arial Black',Sans-Serif;
+  font-weight: normal;
+  height: 146px;
+  background-image: none;
+}
+
+#node-9 h2 {
+  background-color: transparent;
+}
+
+.region #block-search-form {
+  color: #333333;
+  background-color: #000000;
+}
+
+.region #block-system-navigation {
+  background-color: transparent;
+}
+
+#block-system-navigation h2 {
+  font-weight: bold;
+  text-decoration: none;
+  font-family: Arial, Helvetica,Sans-Serif;
+  font-style: normal;
+}
+
