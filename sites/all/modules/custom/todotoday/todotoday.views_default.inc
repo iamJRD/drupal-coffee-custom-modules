@@ -41,10 +41,11 @@ function todotoday_views_default_views() {
   $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
   $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
   $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
-  /* Field: Content: due date */
+  /* Field: Content: Due */
   $handler->display->display_options['fields']['field_due_date']['id'] = 'field_due_date';
   $handler->display->display_options['fields']['field_due_date']['table'] = 'field_data_field_due_date';
   $handler->display->display_options['fields']['field_due_date']['field'] = 'field_due_date';
+  $handler->display->display_options['fields']['field_due_date']['label'] = 'due date';
   $handler->display->display_options['fields']['field_due_date']['settings'] = array(
     'format_type' => 'long',
     'fromto' => 'both',

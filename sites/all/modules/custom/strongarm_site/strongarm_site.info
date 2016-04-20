@@ -1,0 +1,12 @@
+name = strongarm_site
+description = site name, site mail site slogan
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = site_mail
+features[variable][] = site_name
+features[variable][] = site_slogan
+project path = sites/all/modules/custom
