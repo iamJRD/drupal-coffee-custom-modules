@@ -11,8 +11,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -51,7 +51,7 @@ q:before, q:after {
   content:'';
   content:none;
 }
-  
+
 pre {
   background: #555;
   text-shadow: 1px 1px #000;
@@ -234,7 +234,7 @@ h2 {
   line-height:1.0em;
   color: #ffffff;
   font-size: 24px;
-  margin-bottom: 12px;  
+  margin-bottom: 12px;
 }
 
 h2 a {
@@ -334,7 +334,12 @@ hr {
 #logo{
   padding: 45px 10px 0 0;
   margin: 0px;
+
   float:left;
+}
+#logo img{
+  height: auto;
+  width: 72px;
 }
 
 #sitename {
@@ -382,7 +387,7 @@ hr {
   color: #fff;
 }
 
-#main-navigation ul { 
+#main-navigation ul {
   float: right;
   padding: 0;
   margin: 0 0 0 20px;
@@ -410,7 +415,7 @@ hr {
 }
 
 
-#main-navigation li { 
+#main-navigation li {
   float: left;
   margin: none;
   list-style: none;
@@ -427,7 +432,7 @@ hr {
 
 /** Second-level lists **/
 
-#main-navigation li ul { 
+#main-navigation li ul {
   position: absolute;
   font-family: 'Droid Sans', sans-serif, Helvetica, Arial;
   font-size: 12px;
@@ -436,7 +441,7 @@ hr {
   border: 0;
   margin-left: 10px;
   z-index:100;
-  
+
 }
 
 #main-navigation li li,
@@ -469,7 +474,7 @@ hr {
 
 /** Level third and above **/
 
-#main-navigation li ul ul { 
+#main-navigation li ul ul {
   margin: -39px 0 0 190px;
 }
 
@@ -704,7 +709,7 @@ body.sidebar-second #sidebar-second {
   margin-bottom: 15px;
   margin-left: 13px;
   float: right;
-  line-height: 1.7em;  
+  line-height: 1.7em;
   border-left: 1px solid #333333;
 }
 
@@ -825,13 +830,13 @@ li a.active:hover {
 
 .links li a {
   font-family: 'Droid Sans', sans-serif; font-weight: 400;
-  font-size: 12.5px;  
+  font-size: 12.5px;
   text-decoration: none;
   color: #ffffff;
   background-color: #019cff;
   padding: 4px;
   padding-left: 12px;
-  padding-right: 12px;  
+  padding-right: 12px;
 }
 
 .links li a:hover {
@@ -922,7 +927,7 @@ input.form-checkbox, input.form-radio {
 }
 
 /*-------------------------------------------*
-/* Menus and item lists 
+/* Menus and item lists
 /*-------------------------------------------*/
 .item-list ul {
   margin: 0;
@@ -1025,13 +1030,13 @@ ul.secondary a.active {
 
 .field-name-field-tags a{
   font-family: 'Droid Sans', sans-serif; font-weight: 400;
-  font-size: 12.5px;  
+  font-size: 12.5px;
   text-decoration: none;
   color: #ffffff;
   background-color: #019cff;
   padding: 3px;
   padding-left: 9px;
-  padding-right: 9px;  
+  padding-right: 9px;
   text-shadow: 1px 1px #333;
   border-radius: 3px;
 }
@@ -1205,6 +1210,6 @@ h3.comment-title a{
   height: 35px;
 }
 
-#forum .name a{ 
+#forum .name a{
   font-size: 16px;
 }
