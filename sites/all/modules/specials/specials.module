@@ -1,0 +1,20 @@
+<?php
+
+function specials_menu(){
+    $items = array();
+    $items['daily_specials'] = array(
+        'title' => 'Daily Specials',
+        'access callback' => TRUE,
+        'page callback' => 'specials_list',
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function specials_list(){
+    return '<ul>
+                <li> Cold Brew (as always)</li>
+                <li> Chai Latte</li>
+                <li> Cinnamon Twists</li>
+            </ul>';
+}

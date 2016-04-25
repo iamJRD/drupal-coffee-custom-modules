@@ -1,0 +1,5 @@
+name = Specials
+description = List daily specials
+package = My First Module
+core = 7.x
+files[] = specials.module
