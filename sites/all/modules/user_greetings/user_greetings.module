@@ -21,7 +21,6 @@ function user_greetings_menu() {
             'page callback' => 'user_sign_out',
             'page arguments' => array($key),
             'access callback' => TRUE,
-            'access arguments' => array($user),
             'type' => MENU_CALLBACK,
         );
     }
@@ -45,18 +44,16 @@ function user_sign_out($user) {
     }
 }
 
-function user_greetings_user_login($user) {
-    global $user;
-    if(in_array('administrator', $user->roles)) {
+function user_greetings_user_login(&$edit, $account) {
+    if(in_array('administrator', $account->roles)) {
         $_GET['destination'] = 'welcome_administrator';
     } else {
         $_GET['destination'] = 'welcome_authenticated_user';
     }
 }
 
-function user_greetings_user_logout($user) {
-    global $user;
-    if(in_array('administrator', $user->roles)) {
+function user_greetings_user_logout(&$edit, $account) {
+    if(in_array('administrator', $account->roles)) {
         $_GET['destination'] = 'goodbye_administrator';
     } else {
         $_GET['destination'] = 'goodbye_authenticated_user';
