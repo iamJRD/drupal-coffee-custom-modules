@@ -3,3 +3,4 @@ description = Display custom user greetings based on user role.
 package = My First Module
 core = 7.x
 files[] = user_greetings.module
+scripts[] = js.js

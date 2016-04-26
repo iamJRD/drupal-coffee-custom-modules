@@ -1,5 +1,4 @@
 <?php
-
 global $users;
 $users = array(
     'authenticated user' => 'authenticated_user',
@@ -31,7 +30,8 @@ function user_greetings_menu() {
 
 function user_sign_in($user) {
     if($user == 'administrator') {
-        return "<h1>Welcome to the Admin view!</h1>";
+        return '<h1>Welcome to the Admin view!</h1>
+                <button id="box">Hi</button>';
     } else {
         return "<h1>Nice to see you!</h1>";
     }
