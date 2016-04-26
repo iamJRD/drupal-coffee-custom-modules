@@ -1,48 +1,64 @@
 <?php
 
 global $users;
+$users = array(
+    'authenticated user' => 'authenticated_user',
+    'administrator' => 'administrator'
+);
 
 function user_greetings_menu() {
     $items = array();
-    $items['user_login'] = array(
-        'title' => 'Welcome!!!',
-        'page callback' => 'user_sign_in',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
-    $items['user_logout'] = array(
+    global $users;
+    foreach($users as $key => $user) {
+        $items['welcome_' . $user] = array(
+            'title' => 'Welcome!!!',
+            'page callback' => 'user_sign_in',
+            'page arguments' => array($key),
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+        $items['goodbye_' . $user] = array(
             'title' => 'Goodbye!',
             'page callback' => 'user_sign_out',
+            'page arguments' => array($key),
             'access callback' => TRUE,
             'access arguments' => array($user),
             'type' => MENU_CALLBACK,
-    );
+        );
+    }
     return $items;
 }
 
-function user_sign_in() {
-    $user = $GLOBALS['user'];
-    $user_roles = $user->roles;
-    if(in_array('administrator', $user_roles)) {
+function user_sign_in($user) {
+    if($user == 'administrator') {
         return "<h1>Welcome to the Admin view!</h1>";
     } else {
         return "<h1>Nice to see you!</h1>";
     }
 }
 
-
-// function user_sign_out($users) {
-//     if(in_array('administrator', $user->roles)) {
-//         return "<h1>Bye bye bye!</h1>";
-//     } else {
-//         return "<h1>Come back soon!</h1>";
-//     }
-// }
-
-function user_greetings_user_login() {
-    $_GET['destination'] = 'user_login';
+function user_sign_out($user) {
+    if($user == 'administrator') {
+        return "<h1>Bye bye bye!</h1>";
+    } else {
+        return "<h1>Come back soon!</h1>";
+    }
 }
 
-// function user_greetings_user_logout() {
-//     $_GET['destination'] = 'user_logout';
-// }
+function user_greetings_user_login($user) {
+    global $user;
+    if(in_array('administrator', $user->roles)) {
+        $_GET['destination'] = 'welcome_administrator';
+    } else {
+        $_GET['destination'] = 'welcome_authenticated_user';
+    }
+}
+
+function user_greetings_user_logout($user) {
+    global $user;
+    if(in_array('administrator', $user->roles)) {
+        $_GET['destination'] = 'goodbye_administrator';
+    } else {
+        $_GET['destination'] = 'goodbye_authenticated_user';
+    }
+}
