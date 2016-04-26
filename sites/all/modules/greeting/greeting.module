@@ -6,22 +6,47 @@ function greeting_menu(){
         'title' => 'hello friend',
         'page callback' => 'say_hello',
         'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
+        'type' => MENU_CALLBACK,
     );
     $items['goodbye_friend'] = array(
         'title' => 'Goodbye Friend!!!',
         'page callback' => 'say_goodbye',
         'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
+        'type' => MENU_CALLBACK,
+    );
+    $items['welcome_new_user'] = array(
+        'title' => 'Welcome!!!',
+        'page callback' => 'user_create',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
     );
 
     return $items;
 }
 
+//Page Callbacks
 function say_hello(){
     return '<p>Hello there, dear friend</p>';
 }
 
 function say_goodbye() {
     return '<p>Goodbye my dear friend! :)</p>';
+}
+
+function user_create() {
+    return '<p>Thank you for joining the site my good friend!</p>';
+}
+
+
+//Hooks
+function greeting_user_login() {
+    $_GET['destination'] = 'hello_friend';
+}
+
+function greeting_user_logout() {
+    $_GET['destination'] = 'goodbye_friend';
+}
+
+function greeting_user_insert() {
+    $_GET['destination'] = 'welcome_new_user';
 }

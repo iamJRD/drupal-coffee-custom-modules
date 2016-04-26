@@ -1,0 +1,6 @@
+<?php
+
+
+function comment_buddy_comment_publish() {
+    drupal_set_message('Thank you!');
+}
