@@ -1,0 +1,48 @@
+<?php
+
+global $users;
+
+function user_greetings_menu() {
+    $items = array();
+    $items['user_login'] = array(
+        'title' => 'Welcome!!!',
+        'page callback' => 'user_sign_in',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    $items['user_logout'] = array(
+            'title' => 'Goodbye!',
+            'page callback' => 'user_sign_out',
+            'access callback' => TRUE,
+            'access arguments' => array($user),
+            'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function user_sign_in() {
+    $user = $GLOBALS['user'];
+    $user_roles = $user->roles;
+    if(in_array('administrator', $user_roles)) {
+        return "<h1>Welcome to the Admin view!</h1>";
+    } else {
+        return "<h1>Nice to see you!</h1>";
+    }
+}
+
+
+// function user_sign_out($users) {
+//     if(in_array('administrator', $user->roles)) {
+//         return "<h1>Bye bye bye!</h1>";
+//     } else {
+//         return "<h1>Come back soon!</h1>";
+//     }
+// }
+
+function user_greetings_user_login() {
+    $_GET['destination'] = 'user_login';
+}
+
+// function user_greetings_user_logout() {
+//     $_GET['destination'] = 'user_logout';
+// }
